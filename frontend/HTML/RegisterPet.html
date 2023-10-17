@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/RegisterPet.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Agregar mascota
+        </h1>
+        <form id="form" autocomplete="off">
+            <div class="nombre section">
+                <label for="nombre">Nombre</label>
+                <input class="inputs" type="text" id="idnombre" name="nombre">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="especie section">
+                <label for="text">Especie</label>
+                <input class="inputs" type="text" id="idespecie" name="especie">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="raza section">
+                <label for="text">Raza</label>
+                <input class="inputs" type="text" id="idraza" name="raza">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="edad section">
+                <label for="text">Edad</label>
+                <input class="inputs" type="text" id="idedad" name="edad">
+                <p class="mensajeerror"></p>
+            </div>
+            <div>
+                <input class="boton" type="submit" value="Agregar mascota">
+            </div>
+            <p id="mensajeexito"class="mensajeexito"></p>
+            <p id="mensajeerror" class="mensajeerror2"></p> 
+        </form>
+        <script src="../JS/RegisterPet.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+*{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(226,249,255);
+    background-color: linear-gradient(90deg, rgba(226,249,255,1) 80%, rgba(255,255,255,1) 100%);
+}
+
+
+.container {
+    
+    position: absolute; 
+    top: 35%;
+    right: 70%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;  
+    border-radius: 20px; 
+}
+
+.title{
+    position: absolute;
+    top: -30%;
+    color: green; 
+    font-size: 40px;
+
+}
+
+.inputs {
+    
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 10px;
+    border: 2px solid #348b06;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.boton {
+    background-color: rgb(7, 145, 7);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    left: 20%;
+    
+}
+label{
+    color: green;
+}
+
+.boton:hover {
+    background-color: #05831394;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    left: 23px;
+    top: 8px;
+}
+
+.mensajeerror{
+    color: red;
+    margin-top: 0px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.mensajeerror2{
+    color: red;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+.mensajeexito{
+    color: green;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+}
+
+

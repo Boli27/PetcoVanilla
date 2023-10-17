@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/CSS/Register.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <div class="container">
+        <h1 class="title">Crear cuenta
+        </h1>
+        <form id="form" autocomplete="off">
+            <div class="nombre section">
+                <label for="nombre">Nombre</label>
+                <input class="inputs" type="text" id="idnombre" name="nombre">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="email section">
+                <label for="email">Email</label>
+                <input class="inputs" type="email" id="idemail" name="email">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="telefono section">
+                <label for="telefono">Telefono</label>
+                <input class="inputs" type="text" id="idtelefono" name="telefono">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="pass section">
+                <label for="pass">Contraseña</label>
+                <input class="inputs" type="password" id="idpass" name="pass">
+                <p class="mensajeerror"></p>
+            </div>
+            <div class="passconf section">
+                <label for="passconf">Confirmar Contraseña</label>
+                <input class="inputs" type="password" id="idpassconf" name="passconf">
+                <p class="mensajeerror"></p>
+            </div>
+            <div>
+                <input class="boton" type="submit" value="Crear cuenta">
+            </div>
+            <a class="link" href="login.html">¿Ya estás registrado? <span style="color: green;">Inicia sesion</span></a>
+            <p class="mensajeexito"></p>
+        </form>        
+    </div>
+    <script src="/frontend/JS/Register.js"></script>
+</body>
+</html>
