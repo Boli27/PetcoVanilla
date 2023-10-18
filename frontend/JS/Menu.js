@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     await fetch('http://127.0.0.1:3000/user/UserInfo', {
         method: 'GET',
         headers: {
-            'Authorization': 'Bearer ' + token
+            'Authorization': 'Bearer ' + `${token}`
         }
     })
     .then(response => response.json())
