@@ -77,6 +77,7 @@
     align-content: stretch;
     justify-items: stretch;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .profile:hover {

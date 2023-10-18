@@ -5,6 +5,7 @@ config = require('../config/config')
 const secret = config.jwt.secret;
 
 function asignarToken(data){
+
     return jwt.sign(data, secret)
 }
 

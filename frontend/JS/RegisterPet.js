@@ -5,12 +5,20 @@ const raza = document.getElementById('idraza');
 const edad = document.getElementById('idedad');
 const listSection = document.querySelectorAll('.section');
 
+const token =localStorage.getItem("token")
+
+if(!token){
+    window.location=('../../frontend/HTML/ErrorPage.html')
+}
+
 form.addEventListener("submit", async (e) => {
+
     e.preventDefault();
     const nombre = e.target.nombre.value
     const especie = e.target.especie.value
     const raza = e.target.raza.value
     const edad = e.target.edad.value
+
 
     let condicionvalidacion = ValidarFormulario();
     if (condicionvalidacion) {
@@ -49,13 +57,34 @@ function ValidarFormulario() {
     return condicion;
 }
 
-function EnviarFormulario(nombre, especie, raza, edad) {
+
+function EnviarFormulario(nombre, especie, raza, edad){
+
+        fetch('http://127.0.0.1:3000/user/UserInfo', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + `${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.id +" "+ nombre +" "+ especie +" "+ raza +" "+ edad)
+            AgregarMascota(data.id,nombre,especie,raza,edad)
+        })
+        .catch(error => {
+            console.log('Error al obtener la información del usuario:', error);
+        });
+
+}
+
+
+function AgregarMascota(id_dueño, nombre, especie, raza, edad) {
     fetch('http://127.0.0.1:3000/pet/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ nombre: nombre, especie: especie, raza: raza, edad: edad }),
+        body: JSON.stringify({id_dueño: id_dueño, nombre: nombre, especie: especie, raza: raza, edad: edad }),
     })
     form.reset();
     document.getElementById('mensajeexito').innerHTML = "Mascota Registrado";
