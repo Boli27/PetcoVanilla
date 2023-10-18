@@ -4,7 +4,6 @@ const database = require("../config/database");
 const createPet = (req, res) => {
 
     const { nombre, especie, raza, edad} = req.body;
-
     const insertQuery = `INSERT INTO mascota (nombre, especie, raza, edad) VALUES ( ?, ?, ?, ?)`;
     const query = database.format(insertQuery, [nombre, especie, raza, edad]);
 

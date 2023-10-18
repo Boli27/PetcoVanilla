@@ -18,6 +18,7 @@
     };
     // Realiza la solicitud a la API de inicio de sesión
     fetch('http://127.0.0.1:3000/user/login', requestOptions)
+        
         .then(response => {
             if (!response.ok) {
                 throw new Error("Error al iniciar sesión");
@@ -26,7 +27,8 @@
         })
         .then(data => {
             // Maneja la respuesta del servidor aquí
-            console.log(data.message);
+            console.log(data);
+            window.localStorage.setItem("token",data.token)
             window.location.href = '../HTML/Menu.html';
             // Redirige o muestra un mensaje de éxito, dependiendo de la aplicación
         })

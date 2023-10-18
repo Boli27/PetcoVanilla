@@ -69,7 +69,7 @@ const loginUser = (req, res) => {
             if (!bcryptRes) {
                 return res.status(401).send({ message: "Contraseña incorrecta" });
             }
-                
+            
             const token = auth.asignarToken({ userId: user.id });
             return res.status(200).json({ message: "Inicio de sesión exitoso", token });
             
@@ -95,7 +95,7 @@ const getUserInfo = (req, res) => {
 
             const user = result[0];
             // Ahora la información del usuario puede devolverla en la respuesta
-            res.status(200).json({name:user.nombre, email:user.email});
+            res.status(200).json({nombre:user.nombre, email:user.email, id:user.id});
         });
     } else {
         res.status(401).json({ message: 'Token inválido' });
