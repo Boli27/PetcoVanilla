@@ -31,13 +31,28 @@
                 <input class="inputs" type="text" id="idedad" name="edad">
                 <p class="mensajeerror"></p>
             </div>
+
+
+            <div>
+                <label for="plan">Seleccion de plan</label>
+                <select id="plan" name="plan" class="inputs">
+                    <option value="1" id="plan1">Plan Basico</option>
+                    <option value="2" id="plan2">Plan Intermedio</option>
+                    <option value="3" id="plan3">Plan Premium</option>
+                </select>
+            </div>
             <div>
                 <input class="boton" type="submit" value="Agregar mascota">
             </div>
+
             <p id="mensajeexito"class="mensajeexito"></p>
             <p id="mensajeerror" class="mensajeerror2"></p> 
         </form>
+        <button class="boton2" style="margin-right: 2rem;" onclick="BacktoMenu()">menu</button>
+
         <script src="../JS/RegisterPet.js"></script>
     </div>
+    
+
 </body>
 </html>

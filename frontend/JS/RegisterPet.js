@@ -5,6 +5,8 @@ const raza = document.getElementById('idraza');
 const edad = document.getElementById('idedad');
 const listSection = document.querySelectorAll('.section');
 
+const combobox = document.getElementById("plan");
+
 const token =localStorage.getItem("token")
 
 if(!token){
@@ -14,6 +16,11 @@ if(!token){
 form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
+
+    const selectedOption = combobox.options[combobox.selectedIndex];
+    const selectedValue = selectedOption.value;
+    // const selectedId = selectedOption.getAttribute("id");
+
     const nombre = e.target.nombre.value
     const especie = e.target.especie.value
     const raza = e.target.raza.value
@@ -22,7 +29,7 @@ form.addEventListener("submit", async (e) => {
 
     let condicionvalidacion = ValidarFormulario();
     if (condicionvalidacion) {
-        await EnviarFormulario(nombre,especie,raza,edad);
+        await EnviarFormulario(nombre,especie,raza,edad, selectedValue);
     }
 
 })
@@ -58,7 +65,7 @@ function ValidarFormulario() {
 }
 
 
-function EnviarFormulario(nombre, especie, raza, edad){
+function EnviarFormulario(nombre, especie, raza, edad, plan){
 
         fetch('http://127.0.0.1:3000/user/UserInfo', {
             method: 'GET',
@@ -68,8 +75,8 @@ function EnviarFormulario(nombre, especie, raza, edad){
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data.id +" "+ nombre +" "+ especie +" "+ raza +" "+ edad)
-            AgregarMascota(data.id,nombre,especie,raza,edad)
+            // console.log(data.id +" "+ nombre +" "+ especie +" "+ raza +" "+ edad +" "+plan)
+            AgregarMascota(data.id,nombre,especie,raza,edad, plan)
         })
         .catch(error => {
             console.log('Error al obtener la información del usuario:', error);
@@ -78,14 +85,21 @@ function EnviarFormulario(nombre, especie, raza, edad){
 }
 
 
-function AgregarMascota(id_dueño, nombre, especie, raza, edad) {
+function AgregarMascota(id_dueño, nombre, especie, raza, edad, id_plan) {
     fetch('http://127.0.0.1:3000/pet/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({id_dueño: id_dueño, nombre: nombre, especie: especie, raza: raza, edad: edad }),
+        body: JSON.stringify({id_dueño: id_dueño, nombre: nombre, especie: especie, raza: raza, edad: edad, id_plan:id_plan }),
     })
     form.reset();
     document.getElementById('mensajeexito').innerHTML = "Mascota Registrado";
 };
+
+
+function BacktoMenu(){
+
+    window.location.href = '../HTML/Menu.html';
+
+}

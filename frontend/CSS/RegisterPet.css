@@ -14,7 +14,8 @@
     right: 70%;
     display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
+    flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     width: 300px;  
@@ -51,6 +52,20 @@
     left: 20%;
     
 }
+
+.boton2{
+    background-color: rgb(7, 145, 7);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    position: relative;
+    left: 3%;
+
+}
+
 label{
     color: green;
 }
