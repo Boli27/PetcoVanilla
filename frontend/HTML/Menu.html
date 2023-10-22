@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/Menu.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <title>Menu</title>
 </head>
-
 <body>
     <header>
-        <div class="headerr"></div>
-    </header>
+        <div class="leftopciones">
 
-    <body>
-        <div class="bodyy">
-            <div class="containe-op">
-
-            </div>
         </div>
-        <div class="leftmenu">
+
+        <nav class="rigthopciones">  
+            
+            <button class="btn-logout" onclick="Logout()">Cerrar Sesión</button>
+
+        </nav>
+    </header>
+    <main>
+
+        <div class="contenedor-izquierdo">
             <div class="profile" id="profile">
                 <div class="profile-pic" style="background-color: black;"></div>
                 <div class="profile-info">
@@ -41,8 +43,14 @@
             </div>
         </div>
 
-    </body>
-    <script src="/frontend/JS/Menu.js"></script>
-</body>
+        <!-- Contenedor Drecho -->
+        <div class="contenedor-derecho">
+            <div class="containe-op">
 
+            </div>
+        </div>
+
+    </main>
+    <script src="../JS/Menu.js"></script>
+</body>
 </html>

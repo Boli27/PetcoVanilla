@@ -1,38 +1,73 @@
-.headerr {
-    padding: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 94px;
-    z-index: 9999;
-    background-color: white;
-}
 
-.bodyy {
-    background-image: url('../Multimedia/BgMenu.PNG');
-    position: relative;
-    background-repeat: no-repeat;
-    width: 1065px;
-    height: 585px;
-    right: 0px;
-    top: 85px;
-    
-    left: 300px;
+body {
     display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    color: #fff;
+    padding: 1.5rem;
+}
+
+.rigthopciones{
+
+    flex: 1;
+    display: flex;
+    justify-content: right;
+}
+
+
+.btn-logout{
+    background-color: rgb(7, 145, 7);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.leftopciones{
+    flex: 1;
+    display: flex;  
+    justify-content: left;
+}
+
+
+
+main {
+    flex: 1; 
+    flex-direction: row; 
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+.contenedor-izquierdo {
+    flex: 1;
+    max-width: 25%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+
+}
+
+.contenedor-derecho {
+    flex: 4;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center; 
+    background-image: url('../Multimedia/BgMenu.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
-.leftmenu {
-    background-color: white;
-    position: absolute;
-    height: 580px;
-    width: 300px;
-    top: 90px;
-    left: 0px;
-
-}
 
 .containe-op{
     background-color: rgba(255, 255, 255, 0.5);
@@ -41,8 +76,6 @@
     height: 350px;
     border-radius: 20%;
 }
-
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
@@ -128,7 +161,6 @@
 
 .btn-agregar-mascota:hover{
     cursor: pointer;
-
 }
 
 button.profile-pic:hover{
