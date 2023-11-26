@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     if(!token){
         window.location=('../../frontend/HTML/ErrorPage.html')
     }
+    
     else{
+
         e.preventDefault()
         await fetch('http://127.0.0.1:3000/user/UserInfo', {
             method: 'GET',
@@ -35,8 +37,12 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 });
 
 
-function redirigir() {
+function redirigiradd() {
     window.location.href = '../HTML/RegisterPet.html';
+};
+
+function redirigirshow() {
+    window.location.href = '../HTML/VerMacotas.html';
 };
 
 function Logout(){

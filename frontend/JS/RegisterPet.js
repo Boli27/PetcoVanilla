@@ -19,7 +19,6 @@ form.addEventListener("submit", async (e) => {
 
     const selectedOption = combobox.options[combobox.selectedIndex];
     const selectedValue = selectedOption.value;
-    // const selectedId = selectedOption.getAttribute("id");
 
     const nombre = e.target.nombre.value
     const especie = e.target.especie.value

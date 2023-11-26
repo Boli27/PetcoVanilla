@@ -8,13 +8,13 @@
 
     const email = e.target.email.value 
     const pass = e.target.pass.value
-    // Crear un objeto de solicitud para enviar al servidor
+    
     const requestOptions = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email:email, pass: pass }), // Envía los datos del formulario como JSON
+        body: JSON.stringify({ email:email, pass: pass }), 
     };
     // Realiza la solicitud a la API de inicio de sesión
     fetch('http://127.0.0.1:3000/user/login', requestOptions)
@@ -30,11 +30,11 @@
             console.log(data);
             window.localStorage.setItem("token",data.token)
             window.location.href = '../HTML/Menu.html';
-            // Redirige o muestra un mensaje de éxito, dependiendo de la aplicación
+            // Redirige al menu puesto que si se inicio sesion 
         })
         .catch(error => {
             console.error(error.message);
             form.lastElementChild.innerHTML="Credenciales de iniciar sesion incorrectas"
-            // Muestra un mensaje de error al usuario
+            // Muestra un mensaje de error al usuario en caso de no poder iniciar sesion
         });
 });
