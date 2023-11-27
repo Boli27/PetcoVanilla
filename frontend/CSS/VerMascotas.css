@@ -16,8 +16,15 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 20px;
+}
 
-
+.mensajeexito{
+    color: green;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    text-align: center;
 }
 
 
